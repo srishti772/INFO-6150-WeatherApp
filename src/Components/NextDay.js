@@ -63,7 +63,7 @@ raw.forEach((item, index) => {
     
     const day = date.toLocaleDateString('en-US', { weekday: 'long' }); // full day name
 const month = date.toLocaleDateString('en-US', { month: 'short' }); // full month name
-const date1 = date.getUTCDate();
+const date1 = date.toLocaleDateString('en-US', { day: 'numeric' });
 
 
 

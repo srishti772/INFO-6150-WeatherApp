@@ -76,7 +76,7 @@ const DayList = ({records}) => {
 
 
 {Object.keys(uniqueDays)
-        .filter((date)=>new Date(date).getUTCDate()===new Date().getUTCDate())
+        .filter((date)=>new Date(date).toLocaleDateString()===new Date().toLocaleDateString())
         .map((date) => (
           <Link  to="/details" state={{ from: {data:uniqueDays[date]} }} > 
           
@@ -91,7 +91,7 @@ const DayList = ({records}) => {
         {
   Object.keys(uniqueDays)
   .filter((date)=> {
-    return(new Date(date).getUTCDate()>new Date().getUTCDate() )
+    return(new Date(date).toLocaleDateString()!=new Date().toLocaleDateString() )
   })
   .map((date) => (   
     <Link to="/details"  state={{ from: {data:uniqueDays[date],isDown:false} }}>
